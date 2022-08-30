@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,9 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-way21_bb@i0jgdf9jdi&93e8tsnu7qtau+z%dofc1k1^b5lx$f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1',]
+DEBUG = False
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'kejk-backend.herokuapp']
 
 # Application definition
 
@@ -167,3 +169,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'mediafiles'
 
 AUTH_USER_MODEL = 'accounts.User'
+
+django_heroku.settings(locals())
